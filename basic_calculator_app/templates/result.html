@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<h1>Result</h1>
+<h1>Basic Calculator App</h1>
 {% if error %}
 <div class="result" style="color: red;">{{ error }}</div>
 {% else %}
 <div class="result">Result: {{ result }}</div>
 {% endif %}
-<a href="/">Back to Calculator</a>
+<a class="btn" href="/">Back to Calculator</a>
 
 {% endblock %}

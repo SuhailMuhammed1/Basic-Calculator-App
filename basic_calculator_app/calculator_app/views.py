@@ -2,17 +2,15 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseBadRequest
 
 def homepage(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html') # return home page
 
-def calculate(request):
+def calculate(request): # function for calculation
     if request.method == 'POST':
-        try:
-            # Get numbers and operation from the request
-            numbers = list(map(float, request.POST.getlist('numbers')))
+        try: # exception handling
+            numbers = list(map(float, request.POST.getlist('numbers'))) # Get numbers and operation
             operation = request.POST.get('operation')
 
-            # Perform the operation
-            if operation == 'add':
+            if operation == 'add': # Perform the operation
                 result = sum(numbers)
             elif operation == 'subtract':
                 result = numbers[0] - sum(numbers[1:])
@@ -33,10 +31,9 @@ def calculate(request):
                     'error': 'Invalid operation.'
                 })
 
-            # Render result page
-            return render(request, 'result.html', {'result': result})
+            return render(request, 'result.html', {'result': result}) # passes result to result page
 
-        except ValueError:
+        except ValueError:  # invalid input other than number
             return render(request, 'result.html', {
                 'error': 'Invalid input. Ensure all inputs are numbers.'
             })

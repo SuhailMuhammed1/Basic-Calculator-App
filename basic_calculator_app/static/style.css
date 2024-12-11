@@ -28,16 +28,19 @@ button {
     margin: 20px 0;
 }
 
-a {
+.btn {
     display: inline-block;
     margin-top: 20px;
     text-decoration: none;
-    background-color: #007BFF;
+    background-color: #000;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
 }
 
-a:hover {
-    background-color: #0056b3;
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    cursor: pointer;
 }
