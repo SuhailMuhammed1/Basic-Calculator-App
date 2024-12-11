@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Calculator</h1>
+<form method="post" action="/calculate/">
+    {% csrf_token %}
+    <label for="numbers">Enter numbers (up to 4):</label><br>
+    <input type="text" name="numbers" placeholder="Number 1" required>
+    <input type="text" name="numbers" placeholder="Number 2" required>
+    <input type="text" name="numbers" placeholder="Number 3">
+    <input type="text" name="numbers" placeholder="Number 4"><br>
+    <label for="operation">Select operation:</label><br>
+    <select name="operation" required>
+        <option value="add">Addition</option>
+        <option value="subtract">Subtraction</option>
+        <option value="multiply">Multiplication</option>
+        <option value="divide">Division</option>
+    </select><br>
+    <button type="submit">Calculate</button>
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Result</h1>
+{% if error %}
+<div class="result" style="color: red;">{{ error }}</div>
+{% else %}
+<div class="result">Result: {{ result }}</div>
+{% endif %}
+<a href="/">Back to Calculator</a>
+
+{% endblock %}
